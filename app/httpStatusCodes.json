@@ -1,0 +1,5 @@
+{
+	"ok": 200,
+	"notFound": 404,
+	"internalServer": 500
+}
