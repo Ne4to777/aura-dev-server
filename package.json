@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"serve": "supervisor --no-restart-on -w app error ./bin/www"
+		"serve": "set PORT=8080 && supervisor --no-restart-on -w app error ./bin/www"
 	},
 	"dependencies": {
 		"cookie-parser": "~1.4.3",
