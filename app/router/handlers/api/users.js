@@ -26,14 +26,14 @@ const schema = {
 }
 
 const handler = Model => (req, res, next) => {
-	Model.findOne({}, (err, items) => {
+	Model.findOne({ userID: req.params.id }, (err, items) => {
 		if (err) return console.log(err)
 		res.json(items)
 	})
 }
 
 module.exports = {
-	name: 'User',
+	name: 'Users',
 	schema,
 	handler
 }

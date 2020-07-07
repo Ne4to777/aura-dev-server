@@ -1,11 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
 
-const hostRegistry = require('./host-registry')
-const listRegistry = require('./list-registry')
-const sidebar = require('./sidebar')
-const user = require('./user')
-const userSP = require('./user-sp')
+const users = require('./users')
+const userSP = require('./users-sp')
 
 const { Schema } = mongoose
 
@@ -23,8 +20,5 @@ const handlerFactory = ({ name, schema, handler }) => {
 
 module.exports = express
 	.Router()
-	.get('/host-registry', handlerFactory(hostRegistry))
-	.get('/list-registry', handlerFactory(listRegistry))
-	.get('/sidebar', handlerFactory(sidebar))
-	.get('/user', handlerFactory(user))
-	.get('/user-sp', handlerFactory(userSP))
+	.get('/users/:id', handlerFactory(users))
+	.get('/users-sp/:id', handlerFactory(userSP))
